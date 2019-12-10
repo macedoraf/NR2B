@@ -4,7 +4,7 @@ const routes = require('./api/routes/msgRoutes');
 const config_data = require('./config/config.development.json')
 
 //App
-app = express(),
+const app = express()
 
 //Routes
 routes(app);
