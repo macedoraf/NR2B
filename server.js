@@ -1,25 +1,34 @@
 //Dependecies
-const express = require('express'),
-const routes = require('./api/routes/msgRoutes');
-const config_data = require('./config/config.development.json')
+var express = require('express'),
+config_data = require('./config/config.development.json');
+routes = require('./api/routes/routes');
+const mySql = require('mysql');
 
 //App
-const app = express()
-
-//Routes
-routes(app);
+app = express(),
+port = process.env.PORT || 3000,
+routes(app),
+app.listen(port);
+console.log('Message RESTful API server started on: ' + port);
 
 //Database
-const database = mySql.createConnection({
+var con = mySql.createConnection({
     host:config_data.host,
     user:config_data.user,
     password:config_data.password,
     database:config_data.database
-})
+});
 
-//Configurations
-port = process.env.PORT || 3000,
-app.listen(port);
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+  });
+
+con.end(function(err) {
+    if (err) throw err;
+    console.log("Disconected!");
+  });
 
 
-console.log('Message RESTful API server started on: ' + port);
+
+
