@@ -7,8 +7,8 @@ module.exports = {
     database: 'nr2bco71_Homol',
     port: 3306,
     define: {
-        timestamps: true,
-        underscored: true,
+        timestamps: false,
+        freezeTableName: true
     }
 
 };
