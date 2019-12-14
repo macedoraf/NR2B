@@ -4,7 +4,7 @@ class Cliente extends Model {
     static init(sequelize){
         super.init({
             cpfCliente: {
-                type: DataTypes.TEXT,
+                type: DataTypes.NUMBER,
                 allowNull: false,
                 primaryKey: true,
 
