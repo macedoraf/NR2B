@@ -1,7 +1,7 @@
 //Dependecies
 const express = require('express');
-const routes = require('./routes/routes');
-require('./database')
+const routes = require('./src/routes/routes');
+require('./src/database')
 
 
 
