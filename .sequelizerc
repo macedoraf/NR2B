@@ -1,6 +1,12 @@
+//importando uma api para reolver o diretorio onde esta a config do database
 const path = require('path');
 
+//exportando o modulo em express para o sequelize entender as credencias via json
 module.exports = {
-    config: path.resolve(__dirname,'src','config','database.js'),
-    'migrations-path': path.resolve(__dirname,'src','database','migrations')
-};
+    //recebendo diretorio das credenciais para acesso ao banco de dados 
+    config: path.resolve(__dirname, 'src', 'config', 'database.js' ),
+
+    //criação das migrations criada por alteração no banco de dados
+    'migrations-path': path.resolve(__dirname,'src' ,'database', 'migrations'),
+}
+>>>>>>> database
