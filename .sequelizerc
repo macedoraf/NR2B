@@ -9,4 +9,3 @@ module.exports = {
     //criação das migrations criada por alteração no banco de dados
     'migrations-path': path.resolve(__dirname,'src' ,'database', 'migrations'),
 }
->>>>>>> database
