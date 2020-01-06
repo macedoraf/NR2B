@@ -3,25 +3,21 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.createTable('cliente', { 
-        cpf: {
+      return queryInterface.createTable('Pedido', { 
+        idPedido: {
           type: Sequelize.STRING,
           primarykey: true,
           allowNull: false,
         },
-        name:{
+        dataInicio:{
           type: Sequelize.STRING,
           allowNull: false,
         },
-        telefone:{
+        dataTermino:{
           type: Sequelize.STRING,
           allowNull: false,
         },
-        password: {
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
-        email: {
+        descricao: {
           type: Sequelize.STRING,
           allowNull: false,
         },
@@ -39,6 +35,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('cliente');
+      return queryInterface.dropTable('Pedido');
   }
 };

@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.createTable('cliente', { 
+      return queryInterface.createTable('Cliente', { 
         cpf: {
           type: Sequelize.STRING,
           primarykey: true,
@@ -39,6 +39,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('cliente');
+      return queryInterface.dropTable('Cliente');
   }
 };
