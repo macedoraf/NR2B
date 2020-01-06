@@ -3,9 +3,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('cliente', { 
-      cpf: {
+    return queryInterface.createTable('Item', { 
+      idItem: {
         type: Sequelize.STRING,
+        autoIncrement: true,
         primarykey: true,
         allowNull: false,
       },
@@ -13,18 +14,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      telefone:{
+      valor:{
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password: {
+      descricao: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
+      
+      //marcadores temporais
+
       creared_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -39,6 +39,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('cliente');
+    return queryInterface.dropTable('Item');
 }
 };

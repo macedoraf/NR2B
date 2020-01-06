@@ -3,25 +3,61 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('cliente', { 
-      cpf: {
+    return queryInterface.createTable('Estabelecimento', { 
+      cnpj: {
         type: Sequelize.STRING,
         primarykey: true,
         allowNull: false,
       },
-      name:{
+      razaoSocial:{
         type: Sequelize.STRING,
         allowNull: false,
       },
-      telefone:{
+      nomeFantasia:{
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password: {
+      telefone: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
+      cep: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      cidade: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      bairro: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      estado: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      endereco: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      numero: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      tipoEstabelecimento: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      logo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      latitude: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      longitude: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -39,6 +75,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('cliente');
+    return queryInterface.dropTable('Estabelecimento');
 }
 };

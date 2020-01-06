@@ -3,25 +3,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('cliente', { 
-      cpf: {
+    return queryInterface.createTable('Mesa', { 
+      idMesa: {
         type: Sequelize.STRING,
         primarykey: true,
+        autoIncrement:true,
         allowNull: false,
       },
       name:{
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      telefone:{
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      email: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -39,6 +28,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('cliente');
+    return queryInterface.dropTable('Mesa');
 }
 };
