@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     return queryInterface.createTable('Funcionario', { 
-      cpf: {
+      cpfFuncionario: {
         type: Sequelize.STRING,
         primarykey: true,
         allowNull: false,
