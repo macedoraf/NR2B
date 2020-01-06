@@ -4,8 +4,18 @@ module.exports = {
     
     //inserindo dados do cartao no banco
     async store(req, res) {
-        const { numeroCartao, nomeTitular, dataValidade, bandeira } = req.body;
-        const cartao = await Cartao.create({ numeroCartao, nomeTitular, dataValidade, bandeira });
+        const { 
+            numeroCartao, 
+            nomeTitular, 
+            dataValidade, 
+            bandeira 
+        } = req.body;
+        const cartao = await Cartao.create({ 
+            numeroCartao, 
+            nomeTitular, 
+            dataValidade, 
+            bandeira 
+        });
         return res.json(cartao);
     },
 
