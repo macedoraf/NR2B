@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('Estabelecimento', { 
+    return queryInterface.createTable('estabelecimentos', { 
       cnpj: {
         type: Sequelize.STRING,
         primarykey: true,
@@ -65,7 +65,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      creared_at: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -79,6 +79,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Estabelecimento');
+    return queryInterface.dropTable('estabelecimentos');
 }
 };

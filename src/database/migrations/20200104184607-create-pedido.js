@@ -3,9 +3,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.createTable('Pedido', { 
+      return queryInterface.createTable('pedidos', { 
         idPedido: {
-          type: Sequelize.STRING,
+          type: Sequelize.INTEGER,
           primarykey: true,
           allowNull: false,
         },
@@ -21,7 +21,7 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        creared_at: {
+        created_at: {
           type: Sequelize.DATE,
           allowNull: false,
         },
@@ -35,6 +35,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('Pedido');
+      return queryInterface.dropTable('pedidos');
   }
 };

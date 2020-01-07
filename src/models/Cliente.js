@@ -4,19 +4,19 @@ class Cliente extends Model {
     static init(sequelize){
         super.init({
             cpf: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.STRING,
                 allowNull: false,
                 primaryKey: true,
 
             },
-            nome: DataTypes.TEXT,
-            telefone:DataTypes.TEXT,
-            email:DataTypes.TEXT,
-            senha:DataTypes.TEXT,
-        },  {
-                sequelize,
-                modelName: 'Cliente'
-            })
+            name: DataTypes.STRING,
+            password:DataTypes.STRING,
+            telefone:DataTypes.STRING,
+            email:DataTypes.STRING,
+        },{
+            sequelize,
+            modelName: 'Cliente'
+        })
     }
 }
 

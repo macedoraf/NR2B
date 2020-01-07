@@ -3,9 +3,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('Item', { 
+    return queryInterface.createTable('itens', { 
       idItem: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         primarykey: true,
         allowNull: false,
       },
@@ -24,7 +24,7 @@ module.exports = {
       
       //marcadores temporais
 
-      creared_at: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -38,6 +38,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Item');
+    return queryInterface.dropTable('itens');
 }
 };
