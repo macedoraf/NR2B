@@ -5,18 +5,18 @@ module.exports = {
     //inserindo dados do cliente no banco
     async store(req, res) {
         const { 
-            cpfCliente, 
+            cpf, 
             nome, 
             telefone, 
-            email, 
-            senha 
+            password,
+            email
         } = req.body;
         const cliente = await Cliente.create({ 
-            cpfCliente, 
+            cpf, 
             nome, 
             telefone, 
-            email, 
-            senha
+            password,
+            email
          });
         return res.json(cliente);
     },

@@ -7,7 +7,6 @@ module.exports = {
       idMesa: {
         type: Sequelize.STRING,
         primarykey: true,
-        autoIncrement:true,
         allowNull: false,
       },
       name:{

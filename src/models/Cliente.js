@@ -15,7 +15,7 @@ class Cliente extends Model {
             senha:DataTypes.TEXT,
         },  {
                 sequelize,
-                modelName: 'cliente'
+                modelName: 'Cliente'
             })
     }
 }

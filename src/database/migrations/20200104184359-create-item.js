@@ -6,7 +6,6 @@ module.exports = {
     return queryInterface.createTable('Item', { 
       idItem: {
         type: Sequelize.STRING,
-        autoIncrement: true,
         primarykey: true,
         allowNull: false,
       },
