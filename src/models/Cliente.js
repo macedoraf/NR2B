@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Cliente extends Model {
     static init(sequelize){
         super.init({
-            cpfCliente: {
+            cpf: {
                 type: DataTypes.NUMBER,
                 allowNull: false,
                 primaryKey: true,

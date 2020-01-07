@@ -1,5 +1,8 @@
 const express = require('express');
-const routes = require('routes/routes');
+const routes = require('./routes/routes');
+
+//importando a comunicação do banco de dados para reconhecimento das acoes a serem tomadas (CRUD)
+require('./database/')
 
 const app = express();
 
