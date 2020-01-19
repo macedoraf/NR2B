@@ -9,4 +9,5 @@ const app = express();
 app.use(express.json());
 app.use(routes); 
 
+//porta que o server será escutado
 app.listen(3333);
