@@ -13,8 +13,8 @@ routes.get('/', (req,res) => {
 })
 
 //rotas para cliente
-routes.post('/clientes', ClienteController.store);
-routes.get('/clientes', ClienteController.index);
+routes.post('/cliente', ClienteController.store);
+routes.get('/cliente', ClienteController.index);
 
 //rotas para estabelecimento
 routes.post('/estabelecimento', EstabelecimentoController.store);
