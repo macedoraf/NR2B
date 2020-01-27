@@ -17,7 +17,6 @@ routes.post('/cliente', ClienteController.store);
 routes.get('/cliente', ClienteController.index);
 routes.post('/authentication', ClienteController.authentication);
 
-
 //rotas para estabelecimento
 routes.post('/estabelecimento', EstabelecimentoController.store);
 routes.get('/estabelecimento', EstabelecimentoController.index);
