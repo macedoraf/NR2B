@@ -26,6 +26,24 @@ module.exports = {
         const clientes = await Cliente.findAll();
         return res.json(clientes);
 
+    },
+
+    //busca para autenticação
+    async authentication(req, res) {
+        const { 
+            email,
+            password
+        } = req.body;
+        const error = {
+            errorMassage: "Senha ou email invalido!"
+        }
+        const clientes = await Cliente.findAll({
+            where: {
+            email,
+            password
+            }
+          });
+        return  Object.keys(clientes).length == 0 ? res.json(error) : res.json(clientes);
     }
 
 }
