@@ -15,10 +15,8 @@ routes.get('/', (req,res) => {
 //rotas para cliente
 routes.post('/cliente', ClienteController.store);
 routes.get('/cliente', ClienteController.index);
-<<<<<<< HEAD
 routes.post('/authentication', ClienteController.authentication);
-=======
->>>>>>> c9c0650ea427f1f32c3e8aef4191ec741de6dc29
+
 
 //rotas para estabelecimento
 routes.post('/estabelecimento', EstabelecimentoController.store);
