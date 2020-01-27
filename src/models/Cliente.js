@@ -10,6 +10,7 @@ class Cliente extends Model {
 
             },
             name: DataTypes.STRING,
+            sbname: DataTypes.STRING,
             password:DataTypes.STRING,
             telefone:DataTypes.STRING,
             email:DataTypes.STRING,

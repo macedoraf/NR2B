@@ -6,7 +6,7 @@ module.exports = {
     return queryInterface.createTable('cartoes', { 
       numeroCartao: {
         type: Sequelize.STRING,
-        primarykey: true,
+        primaryKey: true,
         allowNull: false,
       },
       nameTitular:{
@@ -25,6 +25,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+
+      // relacionamento com a tabela de cliente
+
+       cliente_cpf: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: { model: 'clientes', key: 'cpf'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+
+      // marcadores de criação e modificação de dados do banco
+
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

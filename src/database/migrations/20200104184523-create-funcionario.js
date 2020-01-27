@@ -4,9 +4,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     return queryInterface.createTable('funcionarios', { 
-      cpfFuncionario: {
+      cpf: {
         type: Sequelize.STRING,
-        primarykey: true,
+        primaryKey: true,
         allowNull: false,
       },
       name:{
@@ -33,6 +33,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+
+      
+      // relacionamento com a tabela de estabelecimento
+
+      estabelecimento_cnpj: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: { model: 'estabelecimentos', key: 'cnpj'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+
+      // marcadores de criação e modificação de dados do banco
+
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -40,7 +54,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
-      }, 
+      },  
 
     });
 

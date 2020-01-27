@@ -6,7 +6,7 @@ module.exports = {
     return queryInterface.createTable('estabelecimentos', { 
       cnpj: {
         type: Sequelize.STRING,
-        primarykey: true,
+        primaryKey: true,
         allowNull: false,
       },
       razaoSocial:{
@@ -65,6 +65,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+
+       //marcadores temporais
+
+       
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

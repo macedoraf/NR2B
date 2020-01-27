@@ -6,14 +6,16 @@ module.exports = {
     async store(req, res) {
         const { 
             cpf, 
-            name, 
+            name,
+            sbname, 
             telefone, 
             password,
             email
         } = req.body;
         const cliente = await Cliente.create({ 
             cpf, 
-            name, 
+            name,
+            sbname, 
             telefone, 
             password,
             email

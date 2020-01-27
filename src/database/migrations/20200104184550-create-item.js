@@ -6,7 +6,7 @@ module.exports = {
     return queryInterface.createTable('itens', { 
       idItem: {
         type: Sequelize.INTEGER,
-        primarykey: true,
+        primaryKey: true,
         allowNull: false,
       },
       name:{
@@ -21,7 +21,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+
+      //relações com a tabela estabelecimento
       
+      estabelecimento_cnpj: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: { model: 'estabelecimentos', key: 'cnpj'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+
       //marcadores temporais
 
       created_at: {
