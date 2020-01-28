@@ -35,16 +35,17 @@ module.exports = {
         const { 
             email,
             password
-        } = req.body;
+        } = req.body;   
         const error = {
-            errorMassage: "Senha ou email invalido!"
+            errorMessage: "Senha ou email invalido!"
         }
         const clientes = await Cliente.findAll({
             where: {
             email,
             password
             }
-          });
+          }).catch((error) => {console.log(error)})
+            
         return  Object.keys(clientes).length == 0 ? res.json(error) : res.json(clientes);
     }
 
