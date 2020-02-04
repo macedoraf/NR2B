@@ -7,6 +7,6 @@ module.exports = {
     port: 3306,
     define: {
         timestamps: true, //todo campo no banco de dados vai ter um created_at, updated_at -> preenchimento de log de alteração
-        underscored: true, //definir o nome de tablea no formato Snake case
+        underscored: false,
     },
 };

@@ -8,4 +8,7 @@ module.exports = {
 
     //criação das migrations criada por alteração no banco de dados
     'migrations-path': path.resolve(__dirname,'src' ,'database', 'migrations'),
+
+    //criação das migrations criada por alteração no banco de dados
+    'seeders-path': path.resolve(__dirname,'src' ,'database', 'seeders'),
 }

@@ -1,4 +1,4 @@
-const Academia = require('../models/Estabelecimento')
+const Estabelecimento = require('../models/Estabelecimento')
 
 module.exports = {
     
@@ -36,9 +36,9 @@ module.exports = {
     },
 
     async index(req, res) {
-        const estabelecimento = await Estabelecimento.findAll();
-        return res.json(estabelecimento);
-
-    }
+        const _estabelecimentos = await Estabelecimento.findAll()
+        .catch((error) => {console.error(error)})
+        return res.json(_estabelecimentos)
+ }
 
 }
