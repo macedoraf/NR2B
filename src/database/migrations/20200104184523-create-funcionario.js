@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('funcionarios', { 
+    return queryInterface.createTable('Funcionarios', { 
       cpf: {
         type: Sequelize.STRING,
         primaryKey: true,
@@ -40,27 +40,27 @@ module.exports = {
       estabelecimento_cnpj: {
         type: Sequelize.STRING,
         allowNull: false,
-        references: { model: 'estabelecimentos', key: 'cnpj'},
+        references: { model: 'Estabelecimentos', key: 'cnpj'},
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
 
       // marcadores de criação e modificação de dados do banco
 
-      created_at: {
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-      },  
+      }, 
 
     });
 
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('funcionarios');
+    return queryInterface.dropTable('Funcionarios');
 }
 };

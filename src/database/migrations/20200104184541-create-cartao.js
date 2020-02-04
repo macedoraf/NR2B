@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('cartoes', { 
+    return queryInterface.createTable('Cartoes', { 
       numeroCartao: {
         type: Sequelize.STRING,
         primaryKey: true,
@@ -31,18 +31,18 @@ module.exports = {
        cliente_cpf: {
         type: Sequelize.STRING,
         allowNull: false,
-        references: { model: 'clientes', key: 'cpf'},
+        references: { model: 'Clientes', key: 'cpf'},
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
 
       // marcadores de criação e modificação de dados do banco
 
-      created_at: {
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
       }, 
@@ -52,6 +52,6 @@ module.exports = {
 },
 
 down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('cartoes');
+    return queryInterface.dropTable('Cartoes');
 }
 };

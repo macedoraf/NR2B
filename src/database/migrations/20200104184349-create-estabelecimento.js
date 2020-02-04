@@ -3,17 +3,17 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('estabelecimentos', { 
+    return queryInterface.createTable('Estabelecimentos', {
       cnpj: {
         type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
       },
-      razaoSocial:{
+      razaoSocial: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      nomeFantasia:{
+      nomeFantasia: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -66,23 +66,23 @@ module.exports = {
         allowNull: false,
       },
 
-       //marcadores temporais
+      //marcadores temporais
 
-       
-      created_at: {
+
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-      }, 
+      },
 
     });
 
-},
+  },
 
-down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('estabelecimentos');
-}
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('Estabelecimentos');
+  }
 };

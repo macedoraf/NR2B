@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.createTable('pedidos', { 
+      return queryInterface.createTable('Pedidos', { 
         idPedido: {
           type: Sequelize.INTEGER,
           primaryKey: true,
@@ -28,7 +28,7 @@ module.exports = {
         estabelecimento_cnpj: {
           type: Sequelize.STRING,
           allowNull: false,
-          references: { model: 'estabelecimentos', key: 'cnpj' },
+          references: { model: 'Estabelecimentos', key: 'cnpj' },
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         },
@@ -36,7 +36,7 @@ module.exports = {
         cliente_cpf: {
           type: Sequelize.STRING,
           allowNull: false,
-          references: { model: 'clientes', key: 'cpf'},
+          references: { model: 'Clientes', key: 'cpf'},
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         },
@@ -44,7 +44,7 @@ module.exports = {
         mesa_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
-          references: { model: 'mesas', key: 'idMesa'},
+          references: { model: 'Mesas', key: 'idMesa'},
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         },
@@ -52,7 +52,7 @@ module.exports = {
         funcionario_cpf: {
           type: Sequelize.STRING,
           allowNull: false,
-          references: { model: 'funcionarios', key: 'cpf'},
+          references: { model: 'Funcionarios', key: 'cpf'},
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         },
@@ -62,11 +62,11 @@ module.exports = {
 
         // marcadores de criação e modificação de dados do banco
 
-        created_at: {
+        createdAt: {
           type: Sequelize.DATE,
           allowNull: false,
         },
-        updated_at: {
+        updatedAt: {
           type: Sequelize.DATE,
           allowNull: false,
         }, 
@@ -76,6 +76,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('pedidos');
+      return queryInterface.dropTable('Pedidos');
   }
 };

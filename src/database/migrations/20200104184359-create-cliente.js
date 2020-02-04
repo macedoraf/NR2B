@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.createTable('clientes', { 
+      return queryInterface.createTable('Clientes', { 
         
         //dados cadastrais do cliente
         
@@ -35,11 +35,11 @@ module.exports = {
 
         // marcador de criação dos dados e de alteração de dados
 
-        created_at: {
+        createdAt: {
           type: Sequelize.DATE,
           allowNull: false,
         },
-        updated_at: {
+        updatedAt: {
           type: Sequelize.DATE,
           allowNull: false,
         }, 
@@ -49,6 +49,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('clientes');
+      return queryInterface.dropTable('Cliente');
   }
 };
