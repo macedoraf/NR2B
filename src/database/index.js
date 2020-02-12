@@ -6,6 +6,7 @@ const Mesa = require('../models/Mesa')
 const Funcionario = require('../models/Funcionario')
 const Item = require('../models/Item')
 const Cartao = require('../models/Cartao')
+const Imagem = require('../models/Imagem')
 
 //criando a conexão com o banco de dados - chamando o Sequelize que foi importado e jagando o JSON da config/database.js
 const connection =  new Sequelize(dbConfig);
@@ -16,6 +17,7 @@ Mesa.init(connection);
 Funcionario.init(connection);
 Item.init(connection);
 Cartao.init(connection);
+Imagem.init(connection);
 
 module.exports = connection;
 

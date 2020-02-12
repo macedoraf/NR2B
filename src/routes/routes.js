@@ -7,6 +7,8 @@ const ItemController = require('../controller/ItemController');
 const PedidoController = require('../controller/PedidoController');
 const MesaController = require('../controller/MesaController');
 const FuncionarioController = require('../controller/FuncionarioController');
+const ImagemController = require('../controller/ImagemController');
+
 
 routes.get('/', (req,res) => {
    return res.json({hello: 'World'})
@@ -36,5 +38,8 @@ routes.get('/mesa', MesaController.index);
 //rotas para funcionarios
 routes.post('/funcionario', FuncionarioController.store);
 routes.get('/funcionario', FuncionarioController.index);
+
+//rotas para imagens
+routes.post('/imagem', ImagemController.store)
 
 module.exports = routes;

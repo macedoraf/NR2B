@@ -72,6 +72,16 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
 
+atob@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
+  integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+b64-to-blob@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/b64-to-blob/-/b64-to-blob-1.2.19.tgz#157d85fdc8811665b9a35d29ffbc6a522ba28fbe"
+  integrity sha512-L3nSu8GgF4iEyNYakCQSfL2F5GI5aCXcot9mNTf+4N0/BMhpxqqHyOb6jIR24iq2xLjQZLG8FOt3gnUcV+9NVg==
+
 babel-runtime@^6.23.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
