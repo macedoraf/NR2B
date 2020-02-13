@@ -12,13 +12,12 @@ module.exports = {
                     res.json({ idImage: idImage })
                 }).catch((error) => {
                     res.status(500).json({
-                        stackTrace: error
+                        stackTrace: error.stack
                     })
-                    console.log(error)
                 })
         } catch (error) {
             res.status(500).json({
-                stackTrace: error
+                stackTrace: error.stack
             })
         }
 
@@ -30,19 +29,15 @@ module.exports = {
             Imagem.findByPk(paramId)
                 .then((imagem) => {
                     const encodeData = Buffer.from(imagem.image).toString("ascii");
-                    const response = {
-                        file: encodeData
-                    }
+                    const response = { file: encodeData }
                     res.json(response)
                 }).catch((error) => {
-                    console.log(error)
                     res.status(500).json(
-                        { stackTrace: error })
+                        { stackTrace: error.stack })
                 })
         } catch (error) {
-            console.log(error)
             res.status(500).json(
-                { stackTrace: error })
+                { stackTrace: error.stack })
         }
 
 
