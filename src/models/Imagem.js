@@ -21,4 +21,4 @@ class Imagem extends Model {
     }
 }
 
-module.exports = Imagem;
+module.exports = Imagem

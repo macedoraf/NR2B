@@ -41,5 +41,6 @@ routes.get('/funcionario', FuncionarioController.index);
 
 //rotas para imagens
 routes.post('/imagem', ImagemController.store)
+routes.get('/imagem', ImagemController.find)
 
 module.exports = routes;
