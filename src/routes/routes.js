@@ -26,14 +26,32 @@ routes.get('/', (req, res) => {
 })
 
 
-
-//Chamadas que o App fará deverão ser autenticadas via JWT
-
-//Chamadas que fazem parte do APP
-
-
-
 //Rotas autenticadas
+
+const CREDIT_CARD = '/creditcard'
+
+//Buscar Cartões de crédito
+routes.get(CREDIT_CARD, (req, res) => {
+   //TODO: Rafa
+});
+
+//Cadsatrar Cartão de Crédito
+routes.post(CREDIT_CARD, (req, res) => {
+   //TODO: Rafa
+   verifyJWT(req, res, (token) => {
+      Cartao
+   })
+});
+
+//Atualizar informações do cartão passar como parametro o idDoCartão
+routes.put(CREDIT_CARD, (req, res) => {
+   //TODO: Rafa
+});
+
+//Atualizar informações do cartão
+routes.delete(CREDIT_CARD, (req, res) => {
+   //TODO: Rafa
+});
 
 //Rotas não autenticadas
 

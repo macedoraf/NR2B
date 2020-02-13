@@ -1,23 +1,39 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Cliente extends Model {
-    static init(sequelize){
+class Cartao extends Model {
+    static init(sequelize) {
         super.init({
-            cpfCliente: {
-                type: DataTypes.NUMBER,
-                allowNull: false,
+            numeroCartao: {
+                type: DataTypes.TEXT,
                 primaryKey: true,
-
+                allowNull: false,
             },
-            nome: DataTypes.TEXT,
-            telefone:DataTypes.TEXT,
-            email:DataTypes.TEXT,
-            senha:DataTypes.TEXT,
-        },  {
-                sequelize,
-                modelName: 'cliente'
-            })
+            nameTitular: {
+                type: DataTypes.TEXT,
+                allowNull: false,
+            },
+            telefone: {
+                type: DataTypes.TEXT,
+                allowNull: false,
+            },
+            dataValidade: {
+                type: DataTypes.TEXT,
+                allowNull: false,
+            },
+            bandeira: {
+                type: DataTypes.TEXT,
+                allowNull: false,
+            },
+
+            cliente_cpf: {
+                type: DataTypes.TEXT
+            },
+
+        }, {
+            sequelize,
+            modelName: 'cartao'
+        })
     }
 }
 
-module.exports = Cliente;
+module.exports = Cartao;

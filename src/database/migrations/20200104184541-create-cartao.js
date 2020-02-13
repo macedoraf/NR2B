@@ -3,17 +3,22 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable('Cartoes', { 
+    return queryInterface.createTable('Cartoes', {
+
+      id: {
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      
       numeroCartao: {
         type: Sequelize.STRING,
-        primaryKey: true,
         allowNull: false,
       },
-      nameTitular:{
+      nameTitular: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      telefone:{
+      telefone: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -28,10 +33,10 @@ module.exports = {
 
       // relacionamento com a tabela de cliente
 
-       cliente_cpf: {
+      cliente_cpf: {
         type: Sequelize.STRING,
         allowNull: false,
-        references: { model: 'Clientes', key: 'cpf'},
+        references: { model: 'Clientes', key: 'cpf' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
@@ -45,13 +50,13 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-      }, 
+      },
 
     });
 
-},
+  },
 
-down: (queryInterface, Sequelize) => {
+  down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Cartoes');
-}
+  }
 };

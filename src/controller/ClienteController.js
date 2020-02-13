@@ -15,7 +15,6 @@ module.exports = {
 
         await Cliente.findAndCountAll({ where: Sequelize.or({ email }, { cpf }) })
             .then((dataSet) => {
-                console.log(dataSet.count)
                 if (dataSet.count == 0) {
                     return Cliente.create({ cpf, name, sbname, telefone, password, email })
                 }
@@ -24,16 +23,12 @@ module.exports = {
                 if (!dataSet) {
                     return res.status(200).json(_emailOrCpfAlreadySigned)
                 } else {
-                    return res.status(201).send(_sucessSign)
+                    return res.status(200).send(_sucessSign)
                 }
             })
             .catch((error) => {
                 return res.status(500).send(error.stack); //Em caso de erro exite o stacktrace
             })
-
-        //Verificar se já existe um e-mail cadastrado .
-        //Sim -> Retornar erro de email já cadastrado.
-        //Não -> Realizar o cadastro
     },
 
 
@@ -82,7 +77,6 @@ module.exports = {
         }).catch((error) => { console.log(error) })
 
         if (cliente != undefined) {
-            console.log(cliente)
             const _token = jwt.sign({ cliente }, process.env.SECRET, {
                 expiresIn: 300 // Expires in 5m
             })
