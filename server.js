@@ -2,11 +2,14 @@
 const express = require('express');
 const routes = require('./src/routes/routes');
 require('./src/database')
+const dotenv = require("dotenv-safe")
+const jwt = require('jsonwebtoken');
 
 
 
 
 //App
+dotenv.config()
 const app = express();
 port = process.env.PORT || 3000
 var bodyParser = require('body-parser');

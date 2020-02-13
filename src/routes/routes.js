@@ -1,5 +1,6 @@
 'use strict';
 const express = require('express');
+const jwt = require('jsonwebtoken')
 const routes = express.Router();
 const ClienteController = require('../controller/ClienteController');
 const EstabelecimentoController = require('../controller/EstabelecimentoController');
@@ -10,14 +11,50 @@ const FuncionarioController = require('../controller/FuncionarioController');
 const ImagemController = require('../controller/ImagemController');
 
 
-routes.get('/', (req,res) => {
-   return res.json({hello: 'World'})
+const verifyJWT = (req, res, next) => {
+   const token = req.headers['x-access-token']
+   if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+   jwt.verify(token, process.env.SECRET, (err, decoded) => {
+      if (err) return res.status(401).send({ auth: false, message: 'Failed to authenticate token.' });
+      next();
+   })
+};
+
+
+routes.get('/', (req, res) => {
+   return res.json({ hello: 'World' })
 })
+
+
+
+//Chamadas que o App fará deverão ser autenticadas via JWT
+
+//Chamadas que fazem parte do APP
+
+
+
+//Rotas autenticadas
+
+//Rotas não autenticadas
+
+//Authentication
+routes.post('/authentication', (req, res) => {
+   ClienteController.authentication(req, res)
+});
+
+//Cadastro
+
+routes.post('/signin', (req, res) => {
+   ClienteController.signIn(req, res)
+
+})
+
+
+
 
 //rotas para cliente
 routes.post('/cliente', ClienteController.store);
 routes.get('/cliente', ClienteController.index);
-routes.post('/authentication', ClienteController.authentication);
 
 //rotas para estabelecimento
 routes.post('/estabelecimento', EstabelecimentoController.store);
