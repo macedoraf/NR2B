@@ -9,6 +9,7 @@ const PedidoController = require('../controller/PedidoController');
 const MesaController = require('../controller/MesaController');
 const FuncionarioController = require('../controller/FuncionarioController');
 const ImagemController = require('../controller/ImagemController');
+const CartaoController = require('../controller/CartaoController');
 
 
 const verifyJWT = (req, res, next) => {
@@ -16,7 +17,7 @@ const verifyJWT = (req, res, next) => {
    if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
    jwt.verify(token, process.env.SECRET, (err, decoded) => {
       if (err) return res.status(401).send({ auth: false, message: 'Failed to authenticate token.' });
-      next();
+      next(decoded);
    })
 };
 
@@ -38,8 +39,8 @@ routes.get(CREDIT_CARD, (req, res) => {
 //Cadsatrar Cartão de Crédito
 routes.post(CREDIT_CARD, (req, res) => {
    //TODO: Rafa
-   verifyJWT(req, res, (token) => {
-      Cartao
+   verifyJWT(req, res, (decodedToken) => {
+      CartaoController.store(req, res, decodedToken)
    })
 });
 
