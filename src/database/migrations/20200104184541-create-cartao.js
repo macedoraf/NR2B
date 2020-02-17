@@ -2,14 +2,13 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-
     return queryInterface.createTable('Cartoes', {
-
       id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      
       numeroCartao: {
         type: Sequelize.STRING,
         allowNull: false,

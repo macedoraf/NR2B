@@ -78,7 +78,7 @@ module.exports = {
 
         if (cliente != undefined) {
             const _token = jwt.sign({ cliente }, process.env.SECRET, {
-                expiresIn: 300 // Expires in 5m
+                expiresIn: 600 // Expires in 10m
             })
             res.header({ Auth: _token })
             res.status(200).json(cliente[0])
