@@ -33,25 +33,32 @@ const CREDIT_CARD = '/creditcard'
 
 //Buscar Cartões de crédito
 routes.get(CREDIT_CARD, (req, res) => {
-   //TODO: Rafa
+   verifyJWT(req, res, (decodedToken) => {
+      const cliente_cpf = decodedToken.cliente[0].cpf
+      CartaoController.index(cliente_cpf,res)
+   })
+   
 });
 
 //Cadsatrar Cartão de Crédito
 routes.post(CREDIT_CARD, (req, res) => {
-   //TODO: Rafa
    verifyJWT(req, res, (decodedToken) => {
       CartaoController.store(req, res, decodedToken)
    })
 });
-
-//Atualizar informações do cartão passar como parametro o idDoCartão
+//Atualizar Cartão de Crédito
 routes.put(CREDIT_CARD, (req, res) => {
-   //TODO: Rafa
+   verifyJWT(req, res, (decodedToken) => {
+      CartaoController.update(req, res, decodedToken)
+   })
 });
 
-//Atualizar informações do cartão
+//Deletar Cartão de Crédito
 routes.delete(CREDIT_CARD, (req, res) => {
-   //TODO: Rafa
+   verifyJWT(req, res, (decodedToken) => {
+      const id = req.query.id
+      CartaoController.delete(id, res)
+   })
 });
 
 //Rotas não autenticadas

@@ -5,8 +5,8 @@ class Cartao extends Model {
         super.init({
             numeroCartao: {
                 type: DataTypes.TEXT,
-                primaryKey: true,
                 allowNull: false,
+                unique: true,
             },
             nameTitular: {
                 type: DataTypes.TEXT,
@@ -27,11 +27,10 @@ class Cartao extends Model {
 
             cliente_cpf: {
                 type: DataTypes.TEXT
-            },
-
+            }
         }, {
             sequelize,
-            modelName: 'cartao'
+            modelName: 'Cartoe'
         })
     }
 }
