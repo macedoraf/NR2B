@@ -23,7 +23,7 @@ module.exports = {
                 if (!dataSet) {
                     return res.status(200).json(_emailOrCpfAlreadySigned)
                 } else {
-                    return res.status(200).send(_sucessSign)
+                    return res.status(200).json(_sucessSign)
                 }
             })
             .catch((error) => {
