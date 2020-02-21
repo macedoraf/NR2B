@@ -65,7 +65,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-
+      
       //marcadores temporais
 
 

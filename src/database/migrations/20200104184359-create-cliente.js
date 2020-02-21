@@ -32,6 +32,10 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
+        description: {
+          type: Sequelize.STRING,
+          allowNull: true,
+        }
 
         // marcador de criação dos dados e de alteração de dados
 
