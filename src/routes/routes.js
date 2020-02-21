@@ -53,6 +53,15 @@ routes.put(CREDIT_CARD, (req, res) => {
    })
 });
 
+//Detalhes do estabelecimento
+const PLACE_DETAIL = "/placedetail"
+
+routes.get(PLACE_DETAIL, (req, res) => {
+   verifyJWT(req, res, (decodedToken) => {
+      EstabelecimentoController.getDetail(req,res)
+   })
+})
+
 //Deletar Cartão de Crédito
 routes.delete(CREDIT_CARD, (req, res) => {
    verifyJWT(req, res, (decodedToken) => {
@@ -60,6 +69,9 @@ routes.delete(CREDIT_CARD, (req, res) => {
       CartaoController.delete(id, res)
    })
 });
+
+
+
 
 //Rotas não autenticadas
 
